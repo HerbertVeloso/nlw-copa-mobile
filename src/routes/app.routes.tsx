@@ -7,6 +7,7 @@ import { Pools } from "../screens/Pools";
 import { color } from "native-base/lib/typescript/theme/styled-system";
 import { Platform } from "react-native";
 import { FindPool } from "../screens/FindPool";
+import { Details } from "../screens/Details";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -20,7 +21,7 @@ export function AppRoutes() {
         tabBarActiveTintColor: colors.yellow[500],
         tabBarInactiveTintColor: colors.gray[300],
         tabBarStyle: {
-          // position: "absolute",
+          position: "absolute",
           backgroundColor: colors.gray[800],
           height: sizes[22],
           borderTopWidth: 0,
@@ -56,6 +57,14 @@ export function AppRoutes() {
       <Screen
         name="find"
         component={FindPool}
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
+
+      <Screen
+        name="details"
+        component={Details}
         options={{
           tabBarButton: () => null,
         }}
